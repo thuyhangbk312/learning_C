@@ -7,10 +7,14 @@
 // sscanf = lấy dữ liệu từ một chuỗi rồi tách/đọc dữ liệu đó vào các biến
 
 int main() {
-    char str[] = "25 80";
+    char str[] = "25 80 trung";
     int a, b;
+    char strTest[16] = {0};
 
-    sscanf(str, "%d %d", &a, &b);
+    int n = sscanf(str, "%d %d %s", &a, &b, strTest);
 
-    printf("%d %d", a, b);
+    printf("n = %d\n", n);
+
+    printf("%d %d\n", a, b);
+    printf("%s", strTest);
 }

@@ -14,9 +14,9 @@ int main() {
 
     // strncpy
     char src1[] = "Hello12345";
-    char dest1[6];
-    strncpy(dest1, src1, 5);
-    dest1[5] = 0;
+    char dest1[6] = {0};
+    strncpy(dest1, src1, sizeof(dest1) - 1);
+    dest1[sizeof(dest1) - 1] = 0;
     printf("dest1 = %s\n", dest1);
 
     // strncpy(dest, src, n)
