@@ -13,11 +13,9 @@ void replace(char src[], uint8_t sizeOfSrc, char find[], char rpl[]) {
         char *tail = p + strlen(find);
         if (sizeOfSrc > newLen) {
             memmove(p + strlen(rpl), tail, strlen(tail));
-
             memcpy(p, rpl, strlen(rpl));
-            for (uint8_t i = 0; i < newLen; i++) {
-                printf("%c", src[i]);
-            }
+            src[newLen] = 0;
+            printf("%s", src);
         } else {
             printf("Over");
         }
@@ -29,7 +27,7 @@ void replace(char src[], uint8_t sizeOfSrc, char find[], char rpl[]) {
 int main() {
     char src[20] = "Hello123";
     char find[] = "llo";
-    char rpl[] = "hihi";
+    char rpl[] = "h";
     uint8_t sizeOfSrc = sizeof(src)/sizeof(src[0]);
     replace(src, sizeOfSrc, find, rpl);
 }
