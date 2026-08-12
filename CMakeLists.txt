@@ -4,7 +4,9 @@ project(untitled C)
 set(CMAKE_C_STANDARD 17)
 
 add_executable(untitled
-#        B2_Pointer/ex1.c
+#        B3_String/ex3.c
+        B3_String/ex3_2.c
+        #        B2_Pointer/ex1.c
 #        B2_Pointer/ex2.c
 #        B2_Pointer/ex3.c
 #        B2_Pointer/ex4.c
@@ -18,7 +20,7 @@ add_executable(untitled
 #        B3_String/memcmp.c
 #        B3_String/memmove.c
 #        B3_String/snprintf.c
-        B3_String/snscanf.c
+#        B3_String/snscanf.c
         #        B3_String/string.c
 #        B3_String/ex1.c
 #        B3_String/ex2.c
