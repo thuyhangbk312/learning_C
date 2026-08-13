@@ -5,7 +5,9 @@ set(CMAKE_C_STANDARD 17)
 
 add_executable(untitled
 #        B3_String/ex3.c
-        B3_String/ex3_2.c
+#        B3_String/ex3_2.c
+#        B3_String/ex41.c
+        B3_String/ex4.c
         #        B2_Pointer/ex1.c
 #        B2_Pointer/ex2.c
 #        B2_Pointer/ex3.c

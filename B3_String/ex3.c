@@ -1,0 +1,36 @@
+//
+// Created by thuyh on 8/12/2026.
+//
+#include <stdint.h>
+#include <stdio.h>
+#include <string.h>
+
+void replace(char src[], uint8_t sizeOfSrc, char find[], char rpl[]) {
+    char *p = strstr(src, find);
+
+    uint8_t startIndex = p - src;
+    uint8_t newLen = strlen(src) - strlen(find) + strlen(rpl);
+    if (p != NULL) {
+        if (sizeOfSrc > newLen) {
+            for (uint8_t i = strlen(src); i >= startIndex + strlen(find); i--) {
+                src[i - strlen(find) + strlen(rpl)] = src[i];
+            }
+            for (uint8_t i = 0; i <strlen(rpl); i++) {
+                src[startIndex + i] = rpl[i];
+             }
+            printf("%s", src);
+        } else {
+            printf("Over");
+        }
+    } else {
+        printf("Not found!");
+    }
+}
+
+int main() {
+    char src[20] = "Hello123";
+    char find[] = "llo";
+    char rpl[] = "h";
+    uint8_t sizeOfSrc = sizeof(src)/sizeof(src[0]);
+    replace(src, sizeOfSrc, find, rpl);
+}
