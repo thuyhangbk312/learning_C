@@ -5,23 +5,34 @@
 #include <stdio.h>
 #include <string.h>
 
-void replace(char src[], uint8_t sizeOfSrc, char find[], char rpl[]) {
+void replace(char src[], uint8_t sizeOfSrc, char find[], char rpl[])
+{
+    if (src == NULL || find == NULL || rpl == NULL)
+    {
+        return;
+    }
+
     char *p = strstr(src, find);
 
     uint8_t newLen = strlen(src) - strlen(find) + strlen(rpl);
-    if (p != NULL) {
-        char *tail = p + strlen(find);
-        if (sizeOfSrc > newLen) {
-            memmove(p + strlen(rpl), tail, strlen(tail));
-            memcpy(p, rpl, strlen(rpl));
-            src[newLen] = 0;
-            printf("%s", src);
-        } else {
-            printf("Over");
-        }
-    } else {
-        printf("Not found!");
+    if (sizeOfSrc < newLen + 1)
+    {
+        printf("Over");
+        return;
     }
+
+    if (p == NULL)
+    {
+        printf("Not found!");
+        return;
+    }
+
+    char *tail = p + strlen(find);
+    memmove(p + strlen(rpl), tail, strlen(tail));
+    memcpy(p, rpl, strlen(rpl));
+    src[newLen] = 0;
+    printf("%s", src);
+
 }
 
 int main() {
