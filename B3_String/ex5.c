@@ -102,3 +102,18 @@ int main()
     splitString(string, "str1=", str1, str2, &a, &b, &c);
     splitString(string, "str2=", str1, str2, &a, &b, &c);
 }
+
+// parseInteger(strTest, "a", &a);
+// parseInteger(strTest, "b", &b);
+// parseInteger(strTest, "c", &c);
+
+bool parseInteger(const char *str, const char *strId, uint32_t *value)
+{
+}
+
+// parseInteger(strTest, "str1", str1, sizeof(str1));
+// parseInteger(strTest, "str2", str2, sizeof(str2));
+
+bool parseString(const char *str, const char *strId, char *valueStr, uint16_t size)
+{
+}
